@@ -4,7 +4,18 @@ import { Button } from "@/app/components/ui/button";
 import { Github, Globe, FileText } from "lucide-react";
 import Link from "next/link";
 
-const webProjects = [
+// Define types for projects
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  paperUrl?: string;
+};
+
+// Web projects array
+const webProjects: Project[] = [
   {
     title: "Recipe Sharing App",
     description: "A full-stack recipe sharing platform built with MERN stack",
@@ -20,21 +31,23 @@ const webProjects = [
   },
 ];
 
-const mlProjects = [
+// Machine Learning projects array
+const mlProjects: Project[] = [
   {
     title: "WorkPlace Success Prediction Model",
     description: "A machine learning model for predicting workplace success using Big Five Personality Traits Meta Heuristics",
     tags: ["Python", "Numpy", "MatPlotlib", "Pandas"],
-    paperUrl: "/Workplace_success_prediction.pdf",  // Updated link
+    paperUrl: "/Workplace_success_prediction.pdf",
   },
   {
     title: "Lunar Path Optimization Model",
     description: "Lunar path optimization using Particle Swarm Optimization (PSO), Ant Colony Optimization (ACO), and Differential Evolution (DE)",
     tags: ["Python", "SeaBorn", "Pandas", "Sklearn"],
-    paperUrl: "/RoverPathOptimization.pdf",  // Updated link
+    paperUrl: "/RoverPathOptimization.pdf",
   },
 ];
 
+// Technologies array
 const technologies = [
   {
     category: "Languages",
@@ -54,7 +67,13 @@ const technologies = [
   },
 ];
 
-function ProjectCard({ project, isML }) {
+// Updated ProjectCard with prop types
+interface ProjectCardProps {
+  project: Project;
+  isML?: boolean;
+}
+
+function ProjectCard({ project, isML }: ProjectCardProps) {
   return (
     <Card className="flex flex-col h-full">
       <CardHeader>
