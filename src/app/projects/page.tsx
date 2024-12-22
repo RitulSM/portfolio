@@ -1,10 +1,10 @@
+// app/projects/page.tsx
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { Badge } from "@/app/components/ui/badge";
 import { Button } from "@/app/components/ui/button";
 import { Github, Globe, FileText } from "lucide-react";
 import Link from "next/link";
 
-// Define types for projects
 type Project = {
   title: string;
   description: string;
@@ -12,10 +12,9 @@ type Project = {
   githubUrl?: string;
   liveUrl?: string;
   paperUrl?: string;
-  imageUrl?: string; // Add imageUrl field
+  imageUrl?: string;
 };
 
-// Web projects array with imageUrl field
 const webProjects: Project[] = [
   {
     title: "Recipe Sharing App",
@@ -23,18 +22,17 @@ const webProjects: Project[] = [
     tags: ["React", "Node.js", "TailwindCSS", "MongoDB"],
     githubUrl: "https://github.com/RitulSM/Recipeapp",
     liveUrl: "https://recipeapp-vert.vercel.app/",
-    imageUrl: "/tastify.png", // Image for the project
+    imageUrl: "/tastify.png",
   },
   {
     title: "Chess Game Application",
     description: "A real-time chess game application built with React and Socket.io",
     tags: ["React", "Chess.js", "TypeScript", "MongoDB"],
     githubUrl: "https://github.com/RitulSM/ChessGame",
-    imageUrl: "/chess.png", // Image for the project
+    imageUrl: "/chess.png",
   },
 ];
 
-// Machine Learning projects array
 const mlProjects: Project[] = [
   {
     title: "WorkPlace Success Prediction Model",
@@ -50,27 +48,6 @@ const mlProjects: Project[] = [
   },
 ];
 
-// Technologies array
-const technologies = [
-  {
-    category: "Languages",
-    items: ["Python", "JavaScript", "C++", "C", "Java"],
-  },
-  {
-    category: "Tools",
-    items: ["Visual Studio Code", "Google Colab", "Overleaf", "Excel", "PowerPoint", "Git"],
-  },
-  {
-    category: "Technologies/Frameworks",
-    items: ["Node.js", "React", "Express", "SQL", "MongoDB", "Docker", "GitHub", "Jenkins", "Maven"],
-  },
-  {
-    category: "Soft Skills",
-    items: ["Presentation Skills", "Teamwork", "Time Management", "Leadership Skills", "Critical Thinking"],
-  },
-];
-
-// Updated ProjectCard with prop types
 interface ProjectCardProps {
   project: Project;
   isML?: boolean;
@@ -83,7 +60,6 @@ function ProjectCard({ project, isML }: ProjectCardProps) {
         <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-1">
-        {/* Add image here */}
         {project.imageUrl && <img src={project.imageUrl} alt={project.title} className="w-full h-auto mb-4 rounded-md" />}
         <p className="text-muted-foreground mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2">
@@ -142,27 +118,6 @@ export default function ProjectsPage() {
         {mlProjects.map((project) => (
           <ProjectCard key={project.title} project={project} isML={true} />
         ))}
-      </div>
-      <div className="mt-12">
-        <h2 className="text-3xl font-bold text-center mb-8">Technologies and Domains</h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          {technologies.map((tech) => (
-            <Card key={tech.category}>
-              <CardHeader>
-                <CardTitle>{tech.category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {tech.items.map((item) => (
-                    <Badge key={item} variant="secondary">
-                      {item}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </div>
     </div>
   );
