@@ -12,9 +12,10 @@ type Project = {
   githubUrl?: string;
   liveUrl?: string;
   paperUrl?: string;
+  imageUrl?: string; // Add imageUrl field
 };
 
-// Web projects array
+// Web projects array with imageUrl field
 const webProjects: Project[] = [
   {
     title: "Recipe Sharing App",
@@ -22,12 +23,14 @@ const webProjects: Project[] = [
     tags: ["React", "Node.js", "TailwindCSS", "MongoDB"],
     githubUrl: "https://github.com/RitulSM/Recipeapp",
     liveUrl: "https://recipeapp-vert.vercel.app/",
+    imageUrl: "/tastify.png", // Image for the project
   },
   {
     title: "Chess Game Application",
     description: "A real-time chess game application built with React and Socket.io",
     tags: ["React", "Chess.js", "TypeScript", "MongoDB"],
     githubUrl: "https://github.com/RitulSM/ChessGame",
+    imageUrl: "/chess.png", // Image for the project
   },
 ];
 
@@ -80,6 +83,8 @@ function ProjectCard({ project, isML }: ProjectCardProps) {
         <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-1">
+        {/* Add image here */}
+        {project.imageUrl && <img src={project.imageUrl} alt={project.title} className="w-full h-auto mb-4 rounded-md" />}
         <p className="text-muted-foreground mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
