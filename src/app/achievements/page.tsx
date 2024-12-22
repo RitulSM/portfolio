@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { Badge } from "@/app/components/ui/badge";
-import { Trophy, Star, GraduationCap, Briefcase, Award } from "lucide-react";
+import { Star, GraduationCap, Briefcase, Award } from "lucide-react";
 
 const achievements = [
   {

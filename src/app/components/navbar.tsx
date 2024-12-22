@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Button } from "@/app/components/ui/button"
+
 import {
   NavigationMenu,
   NavigationMenuItem,
