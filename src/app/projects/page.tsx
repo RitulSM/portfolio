@@ -25,6 +25,13 @@ const webProjects: Project[] = [
     imageUrl: "/tastify.png",
   },
   {
+    title: "Code Snaps",
+    description: "A Next.js application to download formatted code snippets as images",
+    tags: ["Next.js", "ShadCn", "TailwindCSS", "HTML Canvas"],
+    githubUrl: "https://github.com/RitulSM/CodeSnap",
+    liveUrl: "https://code-snaps.vercel.app/",
+    imageUrl: "/Codesnaps.png",},
+  {
     title: "Chess Game Application",
     description: "A real-time chess game application built with React and Socket.io",
     tags: ["React", "Chess.js", "TypeScript", "MongoDB"],
@@ -36,7 +43,7 @@ const webProjects: Project[] = [
 const mlProjects: Project[] = [
   {
     title: "WorkPlace Success Prediction Model",
-    description: "A machine learning model for predicting workplace success using Big Five Personality Traits Meta Heuristics",
+    description: "A machine learning model for predicting workplace success using Big Five Personality Traits and Meta Heuristics",
     tags: ["Python", "Numpy", "MatPlotlib", "Pandas"],
     paperUrl: "/Workplace_success_prediction.pdf",
   },
