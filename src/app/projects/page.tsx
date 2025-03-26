@@ -17,12 +17,12 @@ type Project = {
 
 const webProjects: Project[] = [
   {
-    title: "Recipe Sharing App",
-    description: "A full-stack recipe sharing platform built with MERN stack",
-    tags: ["React", "Node.js", "TailwindCSS", "MongoDB"],
-    githubUrl: "https://github.com/RitulSM/Recipeapp",
-    liveUrl: "https://recipeapp-vert.vercel.app/",
-    imageUrl: "/tastify.png",
+    title: "Flavoriz",
+    description: "A full-stack recipe sharing platform with AI recipe maker built using MERN stack",
+    tags: ["React", "Node.js", "Google Gemini ", "MongoDB"],
+    githubUrl: "https://github.com/RitulSM/flavoriz",
+    liveUrl: "https://flavoriz.vercel.app/recipes",
+    imageUrl: "/flavoriz.png",
   },
   {
     title: "Code Snaps",
